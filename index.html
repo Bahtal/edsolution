@@ -3,13 +3,310 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/normalize.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<script src='./js/main.js' defer></script>
 	<title>Edsolution</title>
 </head>
 <body>
+	<!-- SPRITE -->
+
+	<svg display='none'>
+		<symbol id="profile" viewBox="0 0 23 22">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M11.187 14C8.94791 14 7.18704 12.4274 7.18704 9C7.18704 6.75576 8.76614 5 11.187 5C13.6012 5 15.187 6.92158 15.187 9.2C15.187 12.4796 13.4051 14 11.187 14ZM9.18704 9C9.18704 11.2693 10.0053 12 11.187 12C12.3647 12 13.187 11.2984 13.187 9.2C13.187 7.95042 12.4027 7 11.187 7C9.92078 7 9.18704 7.81582 9.18704 9Z" fill="#9564AA"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M11.187 22C5.11191 22 0.187042 17.0751 0.187042 11C0.187042 4.92487 5.11191 0 11.187 0C17.2622 0 22.187 4.92487 22.187 11C22.187 17.0751 17.2622 22 11.187 22ZM18.5865 16.1246C19.5957 14.6703 20.187 12.9042 20.187 11C20.187 6.02944 16.1576 2 11.187 2C6.21648 2 2.18704 6.02944 2.18704 11C2.18704 12.9042 2.77842 14.6703 3.78755 16.1246C4.91299 14.6381 7.55765 14 11.187 14C14.8164 14 17.4611 14.6381 18.5865 16.1246ZM17.1517 17.7398C16.859 16.6874 14.7564 16 11.187 16C7.61766 16 5.51505 16.6874 5.22236 17.7398C6.81034 19.1462 8.89898 20 11.187 20C13.4751 20 15.5637 19.1462 17.1517 17.7398Z" fill="#9564AA"/>
+		</symbol>
+
+		<symbol id="photos" viewBox="0 0 23 18">
+			<path d="M19.187 7C19.187 7.55228 18.7393 8 18.187 8C17.6348 8 17.187 7.55228 17.187 7C17.187 6.44772 17.6348 6 18.187 6C18.7393 6 19.187 6.44772 19.187 7Z" fill="#9564AA"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M6.18704 10C6.18704 12.7614 8.42562 15 11.187 15C13.9485 15 16.187 12.7614 16.187 10C16.187 7.23858 13.9485 5 11.187 5C8.42562 5 6.18704 7.23858 6.18704 10ZM14.187 10C14.187 11.6569 12.8439 13 11.187 13C9.53019 13 8.18704 11.6569 8.18704 10C8.18704 8.34315 9.53019 7 11.187 7C12.8439 7 14.187 8.34315 14.187 10Z" fill="#9564AA"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M6.12406 2.84538C6.19491 2.74688 6.2736 2.62631 6.37394 2.46372C6.41059 2.40433 6.51053 2.23944 6.58496 2.11665L6.66884 1.97841C7.49783 0.622387 8.10044 0 9.18704 0H13.187C14.2736 0 14.8763 0.622387 15.7052 1.97841L15.7891 2.11664C15.8635 2.23943 15.9635 2.40433 16.0001 2.46372C16.1005 2.62631 16.1792 2.74688 16.25 2.84538C16.2967 2.91033 16.3376 2.96194 16.3708 3H19.187C20.8439 3 22.187 4.34315 22.187 6V15C22.187 16.6569 20.8439 18 19.187 18H3.18704C1.53019 18 0.187042 16.6569 0.187042 15V6C0.187042 4.34315 1.53019 3 3.18704 3H6.00324C6.03653 2.96194 6.07734 2.91033 6.12406 2.84538ZM3.18704 5C2.63476 5 2.18704 5.44772 2.18704 6V15C2.18704 15.5523 2.63476 16 3.18704 16H19.187C19.7393 16 20.187 15.5523 20.187 15V6C20.187 5.44772 19.7393 5 19.187 5H16.187C15.5227 5 15.0747 4.63641 14.6264 4.01326C14.5233 3.86988 14.4211 3.71332 14.2982 3.51409C14.256 3.44583 14.1467 3.26536 14.0716 3.14152L13.9988 3.02159C13.5465 2.28172 13.2738 2 13.187 2H9.18704C9.10031 2 8.82754 2.28172 8.37524 3.02159L8.30247 3.14152C8.22743 3.26534 8.11796 3.44596 8.07591 3.51409C7.95296 3.71332 7.85079 3.86988 7.74766 4.01326C7.29941 4.63641 6.85138 5 6.18704 5H3.18704Z" fill="#9564AA"/>
+		</symbol>
+
+		<symbol id="messages" viewBox="0 0 21 20" >
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M4.18704 19.8042L10.2738 16H18.187C19.2916 16 20.187 15.1046 20.187 14V2C20.187 0.89543 19.2916 0 18.187 0H2.18704C1.08247 0 0.187042 0.89543 0.187042 2V14C0.187042 15.1046 1.08247 16 2.18704 16H4.18704V19.8042ZM9.70025 14L6.18704 16.1958V14H2.18704V2H18.187V14H9.70025Z" fill="#9564AA"/>
+			<rect x="5.18704" y="5" width="10" height="2" fill="#9564AA"/>
+			<rect x="5.18704" y="9" width="10" height="2" fill="#9564AA"/>	
+		</symbol>
+
+		<symbol id="favorites" viewBox="0 0 23 21" >
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M15.7403 0.804261C14.2926 0.804245 13.3594 0.975628 12.2897 1.49596C11.8936 1.6886 11.5221 1.9206 11.177 2.19126C10.8452 1.93577 10.4885 1.71442 10.1089 1.52782C9.01836 0.991837 8.03732 0.804245 6.64159 0.804245C2.90348 0.804245 0.187042 3.8821 0.187042 7.8795C0.187042 10.8983 1.88087 13.8145 5.03588 16.6343C6.69194 18.1144 8.80636 19.5792 10.3206 20.3584L11.187 20.8042L12.0534 20.3584C13.5677 19.5792 15.6821 18.1144 17.3382 16.6343C20.4932 13.8145 22.187 10.8983 22.187 7.8795C22.187 3.92441 19.445 0.819507 15.7403 0.804261ZM20.187 7.8795C20.187 10.2446 18.7732 12.6787 16.0008 15.1566C14.4892 16.5076 12.546 17.8576 11.187 18.5659C9.82808 17.8576 7.88486 16.5076 6.37332 15.1566C3.60086 12.6787 2.18704 10.2446 2.18704 7.8795C2.18704 4.92597 4.07068 2.79171 6.64159 2.79171C7.75132 2.79171 8.43517 2.92248 9.22218 3.30929C9.68705 3.53778 10.0979 3.83948 10.4536 4.2165L11.1894 4.99651L11.9185 4.21032C12.2821 3.81819 12.6991 3.50962 13.169 3.28105C13.9329 2.90946 14.574 2.79171 15.7361 2.79172C18.2752 2.80218 20.187 4.96696 20.187 7.8795Z" fill="#9564AA"/>
+		</symbol>
+
+		<symbol id="guests" viewBox="0 0 23 17">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M7.18703 8.80424C7.18703 11.0134 8.9779 12.8042 11.187 12.8042C13.3962 12.8042 15.187 11.0134 15.187 8.80424C15.187 6.59511 13.3962 4.80424 11.187 4.80424C8.9779 4.80424 7.18703 6.59511 7.18703 8.80424ZM13.187 8.80424C13.187 9.90881 12.2916 10.8042 11.187 10.8042C10.0825 10.8042 9.18703 9.90881 9.18703 8.80424C9.18703 7.69968 10.0825 6.80424 11.187 6.80424C12.2916 6.80424 13.187 7.69968 13.187 8.80424Z" fill="#9564AA"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M11.187 0.804245C13.9146 0.804245 16.5227 2.23487 18.9533 4.58539C19.7825 5.38729 20.5327 6.2434 21.1931 7.09987C21.5916 7.61669 21.8746 8.02324 22.0295 8.26545L22.3741 8.80424L22.0295 9.34304C21.8746 9.58525 21.5916 9.9918 21.1931 10.5086C20.5327 11.3651 19.7825 12.2212 18.9533 13.0231C16.5227 15.3736 13.9146 16.8042 11.187 16.8042C8.45949 16.8042 5.85136 15.3736 3.42074 13.0231C2.59153 12.2212 1.84134 11.3651 1.18094 10.5086C0.782441 9.9918 0.499509 9.58525 0.3446 9.34304L0 8.80424L0.3446 8.26545C0.499509 8.02324 0.782441 7.61669 1.18094 7.09987C1.84134 6.2434 2.59153 5.38729 3.42074 4.58539C5.85136 2.23487 8.45949 0.804245 11.187 0.804245ZM19.6093 8.32112C19.0046 7.53696 18.3172 6.75245 17.563 6.0231C15.4695 3.99862 13.2921 2.80424 11.187 2.80424C9.08196 2.80424 6.90453 3.99862 4.81108 6.0231C4.05687 6.75245 3.36942 7.53696 2.76478 8.32112C2.63419 8.49048 2.51352 8.65207 2.4032 8.80424C2.51352 8.95642 2.63419 9.11801 2.76478 9.28737C3.36942 10.0715 4.05687 10.856 4.81108 11.5854C6.90453 13.6099 9.08196 14.8042 11.187 14.8042C13.2921 14.8042 15.4695 13.6099 17.563 11.5854C18.3172 10.856 19.0046 10.0715 19.6093 9.28737C19.7399 9.11801 19.8605 8.95642 19.9709 8.80424C19.8605 8.65207 19.7399 8.49048 19.6093 8.32112Z" fill="#9564AA"/>
+		</symbol>
+
+		<symbol id="settings" viewBox="0 0 23 23">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M11.187 15.8042C8.9779 15.8042 7.18704 14.0134 7.18704 11.8042C7.18704 9.59511 8.9779 7.80424 11.187 7.80424C13.3962 7.80424 15.187 9.59511 15.187 11.8042C15.187 14.0134 13.3962 15.8042 11.187 15.8042ZM13.187 11.8042C13.187 12.9088 12.2916 13.8042 11.187 13.8042C10.0825 13.8042 9.18704 12.9088 9.18704 11.8042C9.18704 10.6997 10.0825 9.80424 11.187 9.80424C12.2916 9.80424 13.187 10.6997 13.187 11.8042Z" fill="#9564AA"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M17.8432 20.7013L20.0604 18.4841L19.2795 15.6472L19.6197 14.8347L22.187 13.3861V10.2507L19.627 8.79597L19.2925 7.98492L20.0832 5.1466L17.8644 2.93108L15.0273 3.71172L14.2167 3.37182L12.7679 0.804245H9.63248L8.17776 3.36429L7.36689 3.69871L4.52902 2.90705L2.31375 5.12233L3.09452 7.95992L2.75462 8.77059L0.187042 10.2194V13.3539L2.74478 14.8118L3.07956 15.6236L2.28901 18.4614L4.50513 20.6775L7.34272 19.8968L8.15348 20.2367L9.60231 22.8032H12.7369L14.1938 20.2454L15.0054 19.9107L17.8432 20.7013ZM18.0397 13.4299L17.1679 15.512L17.8232 17.8928L17.2548 18.4612L14.8791 17.7994L12.796 18.6585L11.5744 20.8032H10.77L9.55845 18.6571L7.47859 17.785L5.09651 18.4405L4.52907 17.8731L5.1909 15.4973L4.33186 13.4144L2.18704 12.1918V11.3873L4.33414 10.1757L5.20624 8.0958L4.55079 5.71371L5.11705 5.14745L7.4928 5.81019L9.57659 4.9508L10.7963 2.80424H11.6L12.8115 4.95134L14.8914 5.82344L17.274 5.16787L17.8429 5.7359L17.1812 8.1112L18.0405 10.1948L20.187 11.4146V12.2182L18.0397 13.4299Z" fill="#9564AA"/>
+		</symbol>
+
+		<symbol id="logout" viewBox="0 0 21 21" >
+			<path d="M7.47994 6.51033L10.7728 9.80322L0.187042 9.80322L0.187042 11.8032L10.7728 11.8032L7.47994 15.0961L8.89415 16.5103L14.6013 10.8032L8.89415 5.09612L7.47994 6.51033Z" fill="#9564AA"/>
+			<path d="M18.187 0.803222L14.187 0.803222L14.187 2.80322L18.187 2.80322L18.187 18.8032L14.187 18.8032L14.187 20.8032L18.187 20.8032C19.2916 20.8032 20.187 19.9078 20.187 18.8032L20.187 2.80322C20.187 1.69865 19.2916 0.803222 18.187 0.803222Z" fill="#9564AA"/>
+		</symbol>
+
+		<symbol id="cr" viewBox="0 0 17 18">
+			<circle cx="8.5" cy="9" r="8.5" fill="#FFCF2D"/>
+			<path d="M6.168 11.612C5.26667 11.612 4.57867 11.3613 4.104 10.86C3.63467 10.3587 3.4 9.64667 3.4 8.724C3.4 8.26533 3.472 7.85733 3.616 7.5C3.76 7.13733 3.95733 6.83333 4.208 6.588C4.45867 6.33733 4.75733 6.148 5.104 6.02C5.45067 5.892 5.82667 5.828 6.232 5.828C6.46667 5.828 6.68 5.84667 6.872 5.884C7.064 5.916 7.232 5.956 7.376 6.004C7.52 6.04667 7.64 6.092 7.736 6.14C7.832 6.188 7.90133 6.22533 7.944 6.252L7.584 7.26C7.41333 7.16933 7.21333 7.092 6.984 7.028C6.76 6.964 6.504 6.932 6.216 6.932C6.024 6.932 5.83467 6.964 5.648 7.028C5.46667 7.092 5.304 7.196 5.16 7.34C5.02133 7.47867 4.90933 7.66 4.824 7.884C4.73867 8.108 4.696 8.38 4.696 8.7C4.696 8.956 4.72267 9.196 4.776 9.42C4.83467 9.63867 4.92533 9.828 5.048 9.988C5.176 10.148 5.34133 10.276 5.544 10.372C5.74667 10.4627 5.992 10.508 6.28 10.508C6.46133 10.508 6.624 10.4973 6.768 10.476C6.912 10.4547 7.04 10.4307 7.152 10.404C7.264 10.372 7.36267 10.3373 7.448 10.3C7.53333 10.2627 7.61067 10.228 7.68 10.196L8.024 11.196C7.848 11.3027 7.6 11.3987 7.28 11.484C6.96 11.5693 6.58933 11.612 6.168 11.612ZM10.4515 5.892C11.2835 5.892 11.9208 6.04133 12.3635 6.34C12.8062 6.63333 13.0275 7.092 13.0275 7.716C13.0275 8.10533 12.9368 8.42267 12.7555 8.668C12.5795 8.908 12.3235 9.09733 11.9875 9.236C12.0995 9.37467 12.2168 9.53467 12.3395 9.716C12.4622 9.892 12.5822 10.0787 12.6995 10.276C12.8222 10.468 12.9395 10.6707 13.0515 10.884C13.1635 11.092 13.2675 11.2973 13.3635 11.5H11.9635C11.8622 11.3187 11.7582 11.1347 11.6515 10.948C11.5502 10.7613 11.4435 10.58 11.3315 10.404C11.2248 10.228 11.1182 10.0627 11.0115 9.908C10.9048 9.748 10.7982 9.604 10.6915 9.476H10.0755V11.5H8.8275V6.036C9.0995 5.98267 9.3795 5.94533 9.6675 5.924C9.96083 5.90267 10.2222 5.892 10.4515 5.892ZM10.5235 6.956C10.4328 6.956 10.3502 6.95867 10.2755 6.964C10.2062 6.96933 10.1395 6.97467 10.0755 6.98V8.484H10.4275C10.8968 8.484 11.2328 8.42533 11.4355 8.308C11.6382 8.19067 11.7395 7.99067 11.7395 7.708C11.7395 7.436 11.6355 7.244 11.4275 7.132C11.2248 7.01467 10.9235 6.956 10.5235 6.956Z" fill="black"/>
+		</symbol>
+
+		<symbol id="checkbox" viewBox="0 0 20 20" fill='none'>
+			<rect width="20" height="20" rx="5" transform="matrix(-1 0 0 1 20 0)" fill="#9564AA"/>
+			<path d="M5 9.57143L8.63636 13L15 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</symbol>
+
+		<symbol id="checkbox__none" viewBox="0 -1 20 23" fill='none'>
+			<rect width="20" height="20" rx="5" fill="transparent" stroke='#9564AA' stroke-width="2"/>
+		</symbol>
+
+		<symbol id="diamond" viewBox="0 0 131 110" fill='none'>
+			<path d="M65.5 1H101.333L130 36.6667M65.5 1L87 36.6667M65.5 1H29.6667L1 36.6667M65.5 1L44 36.6667M130 36.6667L65.5 108M130 36.6667H87M65.5 108L87 36.6667M65.5 108L1 36.6667M65.5 108L44 36.6667M87 36.6667H44M1 36.6667H44" stroke="#FFCF2D" stroke-width="1.5"/>
+		</symbol>
+
+		<symbol id="surprise" viewBox="0 0 22 22">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M11 15C8.79086 15 7 13.2091 7 11C7 8.79086 8.79086 7 11 7C13.2091 7 15 8.79086 15 11C15 13.2091 13.2091 15 11 15ZM13 11C13 12.1046 12.1046 13 11 13C9.89543 13 9 12.1046 9 11C9 9.89543 9.89543 9 11 9C12.1046 9 13 9.89543 13 11Z" fill="#9564AA"/>
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M17.6562 19.897L19.8733 17.6798L19.0925 14.843L19.4327 14.0305L22 12.5818V9.44645L19.44 7.99173L19.1055 7.18067L19.8961 4.34235L17.6774 2.12683L14.8403 2.90748L14.0296 2.56758L12.5808 0H9.44544L7.99072 2.56004L7.17985 2.89446L4.34198 2.10281L2.1267 4.31809L2.90748 7.15567L2.56758 7.96634L0 9.41514V12.5496L2.55774 14.0076L2.89252 14.8193L2.10197 17.6572L4.31809 19.8733L7.15567 19.0925L7.96644 19.4325L9.41527 21.999H12.5498L14.0067 19.4412L14.8183 19.1065L17.6562 19.897ZM17.8527 12.6256L16.9809 14.7078L17.6362 17.0886L17.0678 17.657L14.692 16.9951L12.609 17.8542L11.3873 19.999H10.5829L9.37141 17.8529L7.29155 16.9808L4.90947 17.6362L4.34203 17.0688L5.00385 14.693L4.14482 12.6101L2 11.3876V10.583L4.1471 9.3715L5.0192 7.29155L4.36375 4.90947L4.93001 4.34321L7.30576 5.00595L9.38955 4.14655L10.6093 2H11.4129L12.6245 4.1471L14.7044 5.0192L17.087 4.36362L17.6558 4.93166L16.9941 7.30696L17.8534 9.39056L20 10.6103V11.4139L17.8527 12.6256Z" fill="#9564AA"/>
+		</symbol>
+
+	</svg>
+
+	<!-- SPRITE -->
 	
-	
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<div class="header__logo">Logo</div>
+				<div class="header__nav">
+					<a href="#" class="header__nav--link">People nearby</a>
+					<a href="#" class="header__nav--link">Search</a>
+					<a href="#" class="header__nav--link header__upgrade">Premium (svg)</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="wrapper__inner">
+				<aside class="sidebar">
+					<section class="profile pad_left">
+						<img class='profile__image' src="./img/profile/profile-img.jpg" alt="Profile image">
+						<div class="image__title">
+							<h2 class="profile-name">Test2412</h2>
+						<button class="upgrade-btn">Get Premium</button>
+						</div>
+					</section>
+		
+					<div class="hr"></div>
+		
+					<nav class='navigation pad_left'>
+						<ul>
+							<li>
+								<svg class='navigation-icons'>
+									<use xlink:href='#profile'></use>
+								</svg>
+								<a class='navigation__link' href="#">Profile</a>
+							</li>
+							<li>
+								<svg class='navigation-icons'>
+									<use xlink:href='#photos'></use>
+								</svg>
+								<a class='navigation__link' href="#">My Photos</a>
+							</li>
+							<li>
+								<svg class='navigation-icons'>
+									<use xlink:href='#messages'></use>
+								</svg>
+								<a class='navigation__link' href="#">Messages</a>
+							</li>
+							<li>
+								<svg class='navigation-icons'>
+									<use xlink:href='#favorites'></use>
+								</svg>
+								<a class='navigation__link' href="#">Favorites</a>
+							</li>
+							<li>
+								<svg class='navigation-icons'>
+									<use xlink:href='#guests'></use>
+								</svg>
+								<a class='navigation__link' href="#">Guests</a>
+							</li>
+							<li>
+								<svg class='navigation-icons'>
+									<use xlink:href='#settings'></use>
+								</svg>
+								<a class='navigation__link' href="#">Settings</a>
+							</li>
+							<li>
+								<svg class='navigation-icons'>
+									<use xlink:href='#logout'></use>
+								</svg>
+								<a class='navigation__link' href="#">Log Out</a>
+							</li>
+						</ul>
+					</nav>
+				</aside>
+		
+		
+		
+				<main class="main">
+					<h1 class="main__title">Закончились кредиты?</h1>
+					<div class="main__title--underline"></div>
+					<div class="main__sale--timer">
+						<h1 class="main__sale--title">Скидка 40%</h1>
+						<p class='main__sale--text'>Предложение действует в течение:</p>
+						<div id="timer">00<span>:</span>28<span>:</span>12</div>
+					</div>
+					<div class="discounts">
+						<div class="discount__cards">
+							<div class="discount__card">
+								<span class="text-hover">One time offer!</span>
+								<div class="amount-sale">
+									<span class='sale__number'>50</span>
+									<svg class='amount-svg'>
+										<use xlink:href='#cr'></use>
+									</svg>
+								</div>
+								<button class="card-btn">Buy now</button>
+							</div>
+							<div class="discount__card">
+								<span class="text-hover">One time offer!</span>
+								<div class="amount-sale">
+									<span class='sale__number'>150</span>
+									<svg class='amount-svg'>
+										<use xlink:href='#cr'></use>
+									</svg>
+								</div>
+								<button class="card-btn">Buy now</button>
+							</div>
+							<div class="discount__card">
+								<span class="text-hover">One time offer!</span>
+								<div class="amount-sale">
+									<span class='sale__number'>300</span>
+									<svg class='amount-svg'>
+										<use xlink:href='#cr'></use>
+									</svg>
+								</div>
+								<button class="card-btn">Buy now</button>
+							</div>
+							<div class="discount__card">
+								<span class="text-hover">One time offer!</span>
+								<div class="amount-sale">
+									<span class='sale__number'>500</span>
+									<svg class='amount-svg'>
+										<use xlink:href='#cr'></use>
+									</svg>
+								</div>
+								<button class="card-btn">Buy now</button>
+							</div>
+							<div class="discount__card">
+								<span class="text-hover">One time offer!</span>
+								<div class="amount-sale">
+									<span class='sale__number'>1000</span>
+									<svg class='amount-svg'>
+										<use xlink:href='#cr'></use>
+									</svg>
+								</div>
+								<button class="card-btn">Buy now</button>
+							</div>
+							<div class="discount__card">
+								<span class="text-hover">One time offer!</span>
+								<div class="amount-sale">
+									<span class='sale__number'>1000</span>
+									<svg class='amount-svg'>
+										<use xlink:href='#cr'></use>
+									</svg>
+								</div>
+								<button class="card-btn">Buy now</button>
+							</div>
+						</div>
+					</div>
+					<form class='custom'>
+						<label class='custom-checkbox' for="checkbox-input">
+							<input id='checkbox-input' type="checkbox">
+
+							<span class="checkmark"  id='checkbox'>
+								<svg class='checked' style='display: none;'>
+									<use xlink:href='#checkbox'></use>
+								</svg>
+								<svg class='unchecked' style='display: block;'>
+									<use xlink:href='#checkbox__none'></use>
+								</svg>
+							</span>
+
+							By clicking Checkbox you agree and accept our 
+							<a href="#">Privacy Policy</a>, and
+							<a href="#">Terms of use</a>
+						</label>
+					</form>
+		
+
+
+
+					<div class="circle">
+						<div class="diamond">
+							<svg class='circle__svg-big'>
+								<use xlink:href='#diamond'></use>
+							</svg>
+						</div>
+						<div class="circle__item">
+							<div class="circle__svg-inner">
+								<svg class='circle__svg'>
+									<use xlink:href='#messages'></use>
+								</svg>
+							</div>
+							<p>Отправлять сообщения</p>
+						</div>
+						<div class="circle__item">
+								<div class="circle__svg-inner">
+									<svg class='circle__svg'>
+									<use xlink:href='#favorites'></use>
+								</svg>
+							</div>
+							<p>Пользоваться другими премиум 
+								функциями</p>
+						</div>
+						<div class="circle__item">
+							<div class="circle__svg-inner">
+								<svg class='circle__svg'>
+									<use xlink:href='#guests'></use>
+								</svg>
+							</div>
+							<p>Просматривать скрытые фото</p>
+						</div>
+						<div class="circle__item">
+							<div class="circle__svg-inner">
+								<svg class='circle__svg'>
+									<use xlink:href='#settings'></use>
+								</svg>
+							</div>
+							<p>Просматривать скрытые фото</p>
+						</div>
+						<div class="circle__item">
+							<div class="circle__svg-inner">
+								<svg class='circle__svg'>
+									<use xlink:href='#messages'></use>
+								</svg>
+							</div>
+							<p>Просматривать скрытые фото</p>
+						</div>
+						<div class="circle__item">
+							<div class="circle__svg-inner">
+								<svg class='circle__svg'>
+									<use xlink:href='#surprise'></use>
+								</svg>
+							</div>
+							<p>Оплачивать подарки</p>
+						</div>
+					</div>
+		
+				</main>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
