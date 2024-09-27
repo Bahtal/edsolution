@@ -4,7 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/normalize.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 	<script src='./js/main.js' defer></script>
 	<title>Edsolution</title>
 </head>
@@ -94,6 +97,12 @@
 			<path d="M10 1.5H15L19 6.5M10 1.5L13 6.5M10 1.5H5L1 6.5M10 1.5L7 6.5M19 6.5L10 16.5M19 6.5H13M10 16.5L13 6.5M10 16.5L1 6.5M10 16.5L7 6.5M13 6.5H7M1 6.5H7" stroke="#FFCF2D" stroke-width="1.5"/>
 		</symbol>
 
+		<symbol id="sidebar-btn" viewBox="0 0 23 14">
+			<rect width="23" height="2" fill="white"/>
+			<rect y="6" width="23" height="2" fill="white"/>
+			<rect y="12" width="23" height="2" fill="white"/>
+		</symbol>
+
 	</svg>
 
 	<!-- SPRITE -->
@@ -102,6 +111,11 @@
 		<div class="container">
 			<div class="header__inner">
 				<div class="header__left">
+					<button id="toggle-sidebar">
+						<svg>
+							<use xlink:href='#sidebar-btn'></use>
+						</svg>
+					</button>
 					<div class="header__logo">Logo</div>
 				<div class="header__nav">
 					<a href="#" class="header__nav--link">People nearby</a>
@@ -120,7 +134,15 @@
 		</div>
 	</header>
 
+
+
 	<div class="wrapper">
+
+		<div id="parallax">
+			<img data-depth="0.5" class='parallax-img parallax-first' src="./img/parallax/pattern-1.png" alt="">
+			<img data-depth="0.5" class='parallax-img parallax-second' src="./img/parallax/pattern.png" alt="">
+		</div>
+	
 		<div class="container">
 			<div class="wrapper__inner">
 				<aside class="sidebar">
@@ -199,7 +221,7 @@
 						</div>
 					</div>
 					<div class="discounts">
-						<div class="discount__cards">
+						<div class="discount__cards" id='swiper-visible'>
 							<div class="discount__card">
 								<span class="text-hover">One time offer!</span>
 								<div class="amount-sale">
@@ -261,6 +283,93 @@
 								<button class="card-btn">Buy now</button>
 							</div>
 						</div>
+						
+
+						<!-- Swiper -->
+
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+
+								<div class="swiper-slide">
+									<div class="discount__card">
+										<span class="text-hover">One time offer!</span>
+										<div class="amount-sale">
+											<span class='sale__number'>50</span>
+											<svg class='amount-svg'>
+												<use xlink:href='#cr'></use>
+											</svg>
+										</div>
+										<button class="card-btn">Buy now</button>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="discount__card">
+										<span class="text-hover">One time offer!</span>
+										<div class="amount-sale">
+											<span class='sale__number'>150</span>
+											<svg class='amount-svg'>
+												<use xlink:href='#cr'></use>
+											</svg>
+										</div>
+										<button class="card-btn">Buy now</button>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="discount__card">
+										<span class="text-hover">One time offer!</span>
+										<div class="amount-sale">
+											<span class='sale__number'>300</span>
+											<svg class='amount-svg'>
+												<use xlink:href='#cr'></use>
+											</svg>
+										</div>
+										<button class="card-btn">Buy now</button>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="discount__card">
+										<span class="text-hover">One time offer!</span>
+										<div class="amount-sale">
+											<span class='sale__number'>500</span>
+											<svg class='amount-svg'>
+												<use xlink:href='#cr'></use>
+											</svg>
+										</div>
+										<button class="card-btn">Buy now</button>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="discount__card">
+										<span class="text-hover">One time offer!</span>
+										<div class="amount-sale">
+											<span class='sale__number'>1000</span>
+											<svg class='amount-svg'>
+												<use xlink:href='#cr'></use>
+											</svg>
+										</div>
+										<button class="card-btn">Buy now</button>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="discount__card">
+										<span class="text-hover">One time offer!</span>
+										<div class="amount-sale">
+											<span class='sale__number'>1000</span>
+											<svg class='amount-svg'>
+												<use xlink:href='#cr'></use>
+											</svg>
+										</div>
+										<button class="card-btn">Buy now</button>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+
+
+						<!-- Swiper-end -->
+
+
 					</div>
 					<form class='custom'>
 						<label class='custom-checkbox' for="checkbox-input">
@@ -274,10 +383,10 @@
 									<use xlink:href='#checkbox__none'></use>
 								</svg>
 							</span>
-
-							By clicking Checkbox you agree and accept our 
+							<span>By clicking Checkbox you agree and accept our 
 							<a href="#">Privacy Policy</a>, and
 							<a href="#">Terms of use</a>
+						</span>
 						</label>
 					</form>
 		

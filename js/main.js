@@ -54,3 +54,51 @@ updateTimerDisplay()
 startTimer();
 
 
+// Parallax
+let scene = document.getElementById('parallax');
+let parallaxInstance = new Parallax(scene, {
+	relativeInput: true
+});
+
+
+// Sidebar
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('toggle-sidebar').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('active');
+  });
+});
+
+
+// Swiper
+document.addEventListener('DOMContentLoaded', function () {
+			const swiper = new Swiper('.swiper-container', {
+				loop: true,
+				slidesPerView: 1,
+				spaceBetween: 10,
+				pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+			},
+			navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+			},
+			breakpoints: {
+					368: {
+							slidesPerView: 1,
+							spaceBetween: 10,
+					},
+					769: {
+							slidesPerView: 2,
+							spaceBetween: 20,
+					}
+	},
+});
+});
+
+
+
+
+
+
+
