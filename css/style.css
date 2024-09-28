@@ -585,9 +585,9 @@ label a {
 
 @media (max-width: 1250px) {
 	
-	.discount__card:last-child {
+	/* .discount__card:last-child {
 		display: block;
-	}
+	} */
 
 	#parallax {
 		display: none;
@@ -748,9 +748,33 @@ label a {
     align-items: center;
 	}
 
+	.text-hover {
+		opacity: 1;
+		z-index: 1;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+
+	.discount__card {
+		background-color: #9564AA;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.sale__number {
+		color: #ffffff;
+	}
+
+	.card-btn {
+		width: 100%;
+		margin-top: 50px;
+	}
+
 	.swiper-pagination {
 		display: block;
 		z-index: 1;
+		transform: translateY(30px);
 	}
 	
 	.discount__card:last-child {
