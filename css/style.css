@@ -310,6 +310,7 @@ body {
 	word-spacing: 10px;
 
 	max-width: 238px;
+	width: 100%;
 }
 
 .separator {
@@ -428,6 +429,73 @@ body {
 }
 
 
+/* Swiper */
+.swiper-slide__inner {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	
+	width: 94%;
+}
+
+.slide__offer {
+	position: absolute;
+	background-color: #FFC500;
+	font-weight: 700;
+	font-size: 14px;
+	border-radius: 10px;
+	padding: 3px 10px;
+}
+
+.slide__left {
+	width: 22px;
+	height: 60px;
+	
+}
+
+.slide__right {
+	border-radius: 10px;
+	background-color: #9564AA;
+	color: #ffffff;
+	width: 100%;
+	height: 60px;
+
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 8px;
+	gap: 5px;
+}
+
+.slide__number {
+	font-weight: 700;
+	font-size: 21px;
+}
+
+.slide-svg {
+	max-width: 20px;
+	max-height: 20px;
+}
+
+.slide-btn {
+	display: none;
+	width: 94%;
+	padding: 17px 29px;
+	font-size: 16px;
+	font-weight: 700;
+	background-color: #ffcf2d;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-top: 49px;
+}
+
+
+
+
+
 /* Custom Checkbox */
 
 .custom {
@@ -460,7 +528,7 @@ body {
   position: relative;
   width: 24px;
   height: 24px;
-  margin-right: 10px;
+  margin-right: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -470,7 +538,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 24px;
   height: 100%;
 }
 
@@ -644,6 +712,13 @@ label a {
 }
 
 @media (max-width: 940px) {
+	#timer {
+		max-width: 100%;
+		width: 242px;
+	}
+}
+
+@media (max-width: 940px) {
 	.header__nav a {
 		display: none;
 	}
@@ -738,6 +813,37 @@ label a {
 
 
 @media (max-width: 368px) {
+
+	.slide-btn {
+		display: block;
+	}
+
+	.pad__left--bg {
+		padding: 10px 0 10px 15px;
+		border-radius: 3px;
+	}
+
+	.pad__left--bg:hover {
+		background-color: #FFC500;
+	}
+
+	.navigation li:not(:last-of-type) {
+		margin-bottom: 1px;
+	}
+
+	.content {
+		margin: 36px 0;
+	}
+
+	.custom-checkbox {
+		max-width: 94%;
+		align-items: flex-start;
+	}
+
+	.custom-checkbox .checkmark {
+		margin-right: 21px;
+	}
+
 	#swiper-visible {
 		display: none;
 	}
@@ -748,27 +854,18 @@ label a {
     align-items: center;
 	}
 
-	.text-hover {
-		opacity: 1;
-		z-index: 1;
-		position: relative;
-		top: 0;
-		left: 0;
+	
+
+	.swiper-pagination-bullet {
+		background-color: #FFC500;
 	}
 
-	.discount__card {
-		background-color: #9564AA;
-		display: flex;
-		justify-content: space-around;
+	.privacy {
+		font-size: 10px;
 	}
 
 	.sale__number {
 		color: #ffffff;
-	}
-
-	.card-btn {
-		width: 100%;
-		margin-top: 50px;
 	}
 
 	.swiper-pagination {
@@ -777,10 +874,10 @@ label a {
 		transform: translateY(30px);
 	}
 	
-	.discount__card:last-child {
-		width: 89.5%;
-	}
+	
 }
+
+
 
 
 
